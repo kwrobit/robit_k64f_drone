@@ -52,5 +52,6 @@ void DJ6_parse_data(byte *pbArr, DJ6RCData *pDJ6Data)
 	pDJ6Data->BK = _nTempData;
 	pDJ6Data->SW1 = ((pbArr[9] & 0b00000011) << 8) + (pbArr[8] << 1) + ((pbArr[7] & 0b10000000) >> 7);
 	pDJ6Data->SW2 = ((pbArr[10] & 0b00011111) << 6) + ((pbArr[9] & 0b11111100) >> 2);
+	pDJ6Data->ERROR = pbArr[23];
 
 }

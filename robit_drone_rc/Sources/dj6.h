@@ -10,6 +10,8 @@
 
 #include "PE_Types.h"
 
+enum DJ6Error {DISCONNECTED=0x0C};
+
 typedef struct _DJ6RCData
 {
 	int RX;
@@ -21,6 +23,7 @@ typedef struct _DJ6RCData
 	word SW1;
 	word SW2;
 
+	byte ERROR;
 }DJ6RCData;
 
 void DJ6_parse_data(byte *pbArr, DJ6RCData *pDJ6Data);
